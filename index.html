@@ -14,9 +14,9 @@
     --smoke: #242424;
     --warm-gray: #2e2e2e;
     --border: #2a2a2a;
-    --gold: #c9a84c;
-    --gold-light: #e8c96a;
-    --gold-dim: rgba(201,168,76,0.15);
+    --gold: #a8a8b3;
+    --gold-light: #d0d0dc;
+    --gold-dim: rgba(168,168,179,0.15);
     --cream: #f5f0e8;
     --white: #ffffff;
     --text-muted: #888;
@@ -64,8 +64,8 @@
   #hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; padding-top: 68px; }
   .hero-bg {
     position: absolute; inset: 0;
-    background: linear-gradient(to bottom, rgba(8,8,8,0.3) 0%, rgba(8,8,8,0.0) 40%, rgba(8,8,8,0.9) 100%),
-      url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1800&q=80&fit=crop') center/cover no-repeat;
+    background: linear-gradient(to bottom, rgba(8,8,8,0.2) 0%, rgba(8,8,8,0.0) 40%, rgba(8,8,8,0.9) 100%),
+      url('images/kleankut_bg.png') center/cover no-repeat;
   }
   .hero-bg::after { content: ''; position: absolute; inset: 0; background: rgba(8,8,8,0.45); }
   .hero-content { position: relative; z-index: 2; padding: 5rem 5rem 6rem; max-width: 860px; }
@@ -78,7 +78,7 @@
 
   /* BUTTONS */
   .btn-primary { display: inline-block; background: var(--gold); color: var(--black); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none; padding: 1.1rem 2.8rem; transition: all 0.25s ease; }
-  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201,168,76,0.25); }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(168,168,179,0.25); }
   .btn-ghost { display: inline-block; border: 1px solid rgba(255,255,255,0.25); color: var(--cream); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none; padding: 1.1rem 2.4rem; transition: all 0.25s ease; }
   .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
 
@@ -103,7 +103,7 @@
   .service-card::before { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
   .service-card:hover { background: var(--smoke); }
   .service-card:hover::before { transform: scaleX(1); }
-  .service-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: rgba(201,168,76,0.12); position: absolute; top: 1.5rem; right: 1.8rem; line-height: 1; }
+  .service-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: rgba(168,168,179,0.12); position: absolute; top: 1.5rem; right: 1.8rem; line-height: 1; }
   .service-icon { width: 40px; height: 40px; margin-bottom: 1.5rem; color: var(--gold); }
   .service-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.06em; color: var(--white); margin-bottom: 0.6rem; }
   .service-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; }
@@ -125,13 +125,13 @@
 
   /* ABOUT */
   #about { background: var(--charcoal); padding: 0; display: grid; grid-template-columns: 1fr 1fr; min-height: 700px; }
-  .about-image { position: relative; overflow: hidden; background: url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&q=80&fit=crop') center/cover no-repeat; min-height: 600px; }
+  .about-image { position: relative; overflow: hidden; background: url('images/kleankut_00.png') center top/cover no-repeat; min-height: 600px; }
   .about-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(17,17,17,0) 60%, var(--charcoal) 100%); }
   .about-content { padding: 6rem 5rem 6rem 4rem; display: flex; flex-direction: column; justify-content: center; }
   .about-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem, 2vw, 1.8rem); font-style: italic; font-weight: 300; color: var(--cream); line-height: 1.5; margin-bottom: 2rem; border-left: 2px solid var(--gold); padding-left: 1.5rem; }
   .about-body { font-size: 0.88rem; color: var(--text-muted); line-height: 1.9; margin-bottom: 2rem; }
   .about-awards { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
-  .award-badge { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,0.3); padding: 0.4rem 0.8rem; }
+  .award-badge { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(168,168,179,0.3); padding: 0.4rem 0.8rem; }
 
   /* STATS */
   .stats-strip { background: var(--graphite); padding: 4rem 5rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -148,25 +148,14 @@
   .testimonial-text { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: var(--text-soft); line-height: 1.7; margin-bottom: 1.5rem; }
   .testimonial-author { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); font-weight: 500; }
 
-  /* SHOP */
-  #shop { background: var(--charcoal); }
-  .shop-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; }
-  .shop-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-  .product-card { background: var(--graphite); overflow: hidden; cursor: pointer; transition: transform 0.3s ease; }
-  .product-card:hover { transform: translateY(-4px); }
-  .product-img { height: 240px; background-size: cover; background-position: center; position: relative; overflow: hidden; }
-  .product-badge { position: absolute; top: 1rem; right: 1rem; background: var(--gold); color: var(--black); font-size: 0.62rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.25rem 0.6rem; }
-  .product-info { padding: 1.4rem; }
-  .product-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--cream); margin-bottom: 0.3rem; }
-  .product-brand { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.8rem; }
-  .product-price { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--gold); }
+
 
   /* GIFT CARDS */
   #giftcards { background: var(--black); padding: 7rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
   .gift-visual { position: relative; height: 260px; }
   .gift-card-ui { position: absolute; width: 340px; height: 200px; padding: 2rem 2.2rem; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
-  .gift-card-back { background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); border: 1px solid rgba(201,168,76,0.3); top: 0; left: 0; }
-  .gift-card-front { background: linear-gradient(135deg, var(--gold) 0%, #a07830 100%); top: 40px; left: 50px; z-index: 2; }
+  .gift-card-back { background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); border: 1px solid rgba(168,168,179,0.3); top: 0; left: 0; }
+  .gift-card-front { background: linear-gradient(135deg, #8a8a96 0%, #c0c0cc 100%); top: 40px; left: 50px; z-index: 2; }
   .gift-card-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.15em; }
 
   /* INSTAGRAM */
@@ -174,11 +163,11 @@
   .insta-header { text-align: center; margin-bottom: 3rem; }
   .insta-handle { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--text-muted); font-style: italic; }
   .insta-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; }
-  .insta-cell { aspect-ratio: 1; overflow: hidden; position: relative; cursor: pointer; }
+  .insta-cell { aspect-ratio: 1; overflow: hidden; position: relative; cursor: pointer; display: block; }
   .insta-cell img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease, filter 0.3s ease; filter: grayscale(20%); }
   .insta-cell:hover img { transform: scale(1.07); filter: grayscale(0%); }
-  .insta-cell::after { content: ''; position: absolute; inset: 0; background: rgba(201,168,76,0); transition: background 0.3s ease; }
-  .insta-cell:hover::after { background: rgba(201,168,76,0.08); }
+  .insta-cell::after { content: ''; position: absolute; inset: 0; background: rgba(168,168,179,0); transition: background 0.3s ease; }
+  .insta-cell:hover::after { background: rgba(168,168,179,0.08); }
 
   /* FAQ */
   #faq { background: var(--black); }
@@ -213,7 +202,7 @@
   .hours-row:last-child { border-bottom: none; }
   .footer-bottom { border-top: 1px solid var(--border); padding: 1.5rem 5rem; display: flex; justify-content: space-between; align-items: center; }
   .footer-bottom-text { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.05em; }
-  a.gold-link { color: var(--gold); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid rgba(201,168,76,0.4); padding-bottom: 2px; transition: border-color 0.2s; }
+  a.gold-link { color: var(--gold); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid rgba(168,168,179,0.4); padding-bottom: 2px; transition: border-color 0.2s; }
   a.gold-link:hover { border-color: var(--gold); }
 
   /* ANIMATIONS */
@@ -230,7 +219,6 @@
     section { padding: 5rem 3rem; }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
     .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
-    .shop-grid { grid-template-columns: repeat(2, 1fr); }
     .stats-strip { grid-template-columns: repeat(2, 1fr); }
     .footer-main { grid-template-columns: 1fr 1fr; }
     .pricing-cols { grid-template-columns: 1fr; }
@@ -246,7 +234,6 @@
     .nav-links { display: none; }
     .services-grid { grid-template-columns: 1fr; }
     .testimonials-grid { grid-template-columns: 1fr; }
-    .shop-grid { grid-template-columns: 1fr 1fr; }
     .faq-grid { grid-template-columns: 1fr; }
     .footer-main { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
     .footer-bottom { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
@@ -268,7 +255,6 @@
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#shop">Shop</a></li>
       <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
@@ -478,59 +464,7 @@
   </div>
 </section>
 
-<!-- SHOP -->
-<section id="shop">
-  <div class="shop-header">
-    <div>
-      <div class="section-label">Grooming Products</div>
-      <h2 class="section-title">The Shop</h2>
-    </div>
-    <a href="https://mysite.vagaro.com/kleankutgroominglounge/shop" target="_blank" class="gold-link">View All Products &rarr;</a>
-  </div>
-  <div class="shop-grid">
-    <div class="product-card fade-up">
-      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1621196639310-0cf8c48a5d63?w=600&q=80&fit=crop')">
-        <span class="product-badge">Bestseller</span>
-      </div>
-      <div class="product-info">
-        <div class="product-brand">Kleankut</div>
-        <div class="product-name">Premium Beard Oil</div>
-        <div class="product-price">$28</div>
-      </div>
-    </div>
-    <div class="product-card fade-up">
-      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1597354984706-fac992d9306f?w=600&q=80&fit=crop')">
-        <span class="product-badge">New</span>
-      </div>
-      <div class="product-info">
-        <div class="product-brand">Kleankut</div>
-        <div class="product-name">Scalp Conditioning Serum</div>
-        <div class="product-price">$35</div>
-      </div>
-    </div>
-    <div class="product-card fade-up">
-      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1585751119414-ef2636f8aede?w=600&q=80&fit=crop')"></div>
-      <div class="product-info">
-        <div class="product-brand">Kleankut</div>
-        <div class="product-name">Men&apos;s Facial Cleanser</div>
-        <div class="product-price">$22</div>
-      </div>
-    </div>
-    <div class="product-card fade-up">
-      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1591316153851-50df42e4e3da?w=600&q=80&fit=crop')">
-        <span class="product-badge">Bundle</span>
-      </div>
-      <div class="product-info">
-        <div class="product-brand">Kleankut</div>
-        <div class="product-name">Grooming Starter Kit</div>
-        <div class="product-price">$78</div>
-      </div>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:3rem;">
-    <a href="https://mysite.vagaro.com/kleankutgroominglounge/shop" target="_blank" class="btn-ghost">Shop All Products</a>
-  </div>
-</section>
+
 
 <!-- GIFT CARDS -->
 <section id="giftcards">
@@ -564,12 +498,12 @@
     <p class="insta-handle">Live from the lounge</p>
   </div>
   <div class="insta-grid">
-    <div class="insta-cell"><img src="https://images.unsplash.com/photo-1534297635766-a262cdcb8ee4?w=400&q=80&fit=crop" alt="Barbershop cut"></div>
-    <div class="insta-cell"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=400&q=80&fit=crop" alt="Fade"></div>
-    <div class="insta-cell"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=400&q=80&fit=crop" alt="Barber at work"></div>
-    <div class="insta-cell"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=400&q=80&fit=crop" alt="Grooming products"></div>
-    <div class="insta-cell"><img src="https://images.unsplash.com/photo-1622296089862-6c3e8e06c574?w=400&q=80&fit=crop" alt="Barber tools"></div>
-    <div class="insta-cell"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=400&q=80&fit=crop" alt="Style"></div>
+    <a class="insta-cell" href="https://www.instagram.com/p/DZAeeqmoJbT/" target="_blank" rel="noopener"><img src="images/kleankut_01.jpg" alt="Kleankut post"></a>
+    <a class="insta-cell" href="https://www.instagram.com/p/DUG6rgtjwKY/" target="_blank" rel="noopener"><img src="images/kleankut_02.jpg" alt="Kleankut post"></a>
+    <a class="insta-cell" href="https://www.instagram.com/p/DUJD7ZaDqn9/" target="_blank" rel="noopener"><img src="images/kleankut_03.jpg" alt="Kleankut post"></a>
+    <a class="insta-cell" href="https://www.instagram.com/p/DTtGsh2D0KM/" target="_blank" rel="noopener"><img src="images/kleankut_04.jpg" alt="Kleankut post"></a>
+    <a class="insta-cell" href="https://www.instagram.com/p/DTqszpTDoVl/" target="_blank" rel="noopener"><img src="images/kleankut_05.jpg" alt="Kleankut post"></a>
+    <a class="insta-cell" href="https://www.instagram.com/p/DSyDPlmj5T8/" target="_blank" rel="noopener"><img src="images/kleankut_06.jpg" alt="Kleankut post"></a>
   </div>
   <div style="text-align:center;margin-top:2.5rem;">
     <a href="https://www.instagram.com/kleankut_groominglounge/" target="_blank" class="btn-ghost">Follow on Instagram</a>
@@ -661,7 +595,6 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#about">About Eric</a></li>
-        <li><a href="#shop">Shop Products</a></li>
         <li><a href="#testimonials">Reviews</a></li>
         <li><a href="https://mysite.vagaro.com/kleankutgroominglounge/gift-certificates" target="_blank">Gift Cards</a></li>
         <li><a href="https://mysite.vagaro.com/kleankutgroominglounge/memberships" target="_blank">Memberships</a></li>
