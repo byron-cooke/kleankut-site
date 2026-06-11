@@ -91,6 +91,10 @@
   body.light .price-row { border-bottom-color: rgba(0,0,0,0.06); }
   body.light .insta-cell img { filter: none; }
   body.light #instagram { background: #ece8e1; }
+  body.light .hero-title { color: #ffffff; }
+  body.light .hero-title span { color: #ffffff; }
+  body.light .btn-ghost { color: #ffffff; border-color: rgba(255,255,255,0.5); }
+  body.light .btn-ghost:hover { border-color: #ffffff; color: #ffffff; }
 
   /* THEME TOGGLE */
   .theme-toggle {
@@ -306,7 +310,7 @@
 
 <!-- STICKY NAV -->
 <header id="sticky-bar">
-  <a href="#hero" class="nav-logo"><img src="images/kleankut_logo-horizontal_ko.svg" alt="Kleankut Grooming Lounge" style="height:32px;width:auto;display:block;"></a>
+  <a href="#hero" class="nav-logo"><img src="images/kleankut_logo-horizontal_ko.svg" id="nav-logo-img" alt="Kleankut Grooming Lounge" style="height:32px;width:auto;display:block;"></a>
   <nav>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
@@ -744,6 +748,9 @@
   function toggleTheme() {
     const isLight = document.body.classList.toggle('light');
     document.getElementById('toggle-label').textContent = isLight ? 'Light' : 'Dark';
+    document.getElementById('nav-logo-img').src = isLight
+      ? 'images/kleankut_logo-horizontal_dark.svg'
+      : 'images/kleankut_logo-horizontal_ko.svg';
     localStorage.setItem('kleankut-theme', isLight ? 'light' : 'dark');
   }
 
@@ -751,6 +758,7 @@
   if (localStorage.getItem('kleankut-theme') === 'light') {
     document.body.classList.add('light');
     document.getElementById('toggle-label').textContent = 'Light';
+    document.getElementById('nav-logo-img').src = 'images/kleankut_logo-horizontal_dark.svg';
   }
 
   const stickyBar = document.getElementById('sticky-bar');
