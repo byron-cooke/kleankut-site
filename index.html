@@ -13,14 +13,14 @@
     --graphite: #1a1a1a;
     --smoke: #242424;
     --warm-gray: #2e2e2e;
-    --border: #2a2a2a;
+    --border: #333333;
     --gold: #a8a8b3;
     --gold-light: #d0d0dc;
     --gold-dim: rgba(168,168,179,0.15);
-    --cream: #f5f0e8;
+    --cream: #ffffff;
     --white: #ffffff;
-    --text-muted: #888;
-    --text-soft: #bbb;
+    --text-muted: #aaaaaa;
+    --text-soft: #dddddd;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -53,6 +53,61 @@
     border-bottom: 1px solid var(--border); transition: all 0.4s ease;
   }
   #sticky-bar.scrolled { background: rgba(8,8,8,0.98); height: 60px; }
+
+  /* LIGHT MODE OVERRIDES */
+  body.light {
+    --black: #f5f2ee;
+    --charcoal: #ece8e1;
+    --graphite: #e4e0d8;
+    --smoke: #d8d4cc;
+    --border: #ccc9c0;
+    --cream: #1a1a1a;
+    --white: #0a0a0a;
+    --text-muted: #555;
+    --text-soft: #333;
+    --gold: #6b6b78;
+    --gold-light: #4a4a56;
+  }
+  body.light #sticky-bar { background: rgba(245,242,238,0.95) !important; border-bottom-color: #ccc9c0; }
+  body.light #sticky-bar.scrolled { background: rgba(245,242,238,0.99) !important; }
+  body.light .hero-bg::after { background: rgba(245,242,238,0.15); }
+  body.light .marquee-strip { background: #1a1a1a; }
+  body.light .marquee-item, body.light .marquee-dot { color: #f0ede8; }
+  body.light .service-card { background: #ece8e1; }
+  body.light .service-card:hover { background: #e0dcd4; }
+  body.light .about-image::after { background: linear-gradient(to right, rgba(236,232,225,0) 60%, var(--charcoal) 100%); }
+  body.light .stats-strip { background: #e4e0d8; }
+  body.light .testimonial-card { background: #ece8e1; border-color: rgba(0,0,0,0.1); }
+  body.light .gift-card-back { background: linear-gradient(135deg, #d8d4cc 0%, #c8c4bc 100%); }
+  body.light footer { background: #1a1a1a; }
+  body.light .footer-tagline, body.light .footer-links a, body.light .footer-contact-item,
+  body.light .footer-hours, body.light .footer-bottom-text { color: #aaa; }
+  body.light .footer-col-title { color: #fff; }
+  body.light .footer-bottom { border-top-color: #333; }
+  body.light .section-title::after { opacity: 0.15; }
+  body.light .faq-item { border-bottom-color: #ccc9c0; }
+  body.light #booking { background: #e4e0d8; }
+  body.light .booking-frame { background: #d8d4cc !important; }
+  body.light .price-row { border-bottom-color: rgba(0,0,0,0.06); }
+  body.light .insta-cell img { filter: none; }
+  body.light #instagram { background: #ece8e1; }
+
+  /* THEME TOGGLE */
+  .theme-toggle {
+    background: none; border: 1px solid var(--border); cursor: pointer;
+    width: 44px; height: 24px; border-radius: 12px; position: relative;
+    transition: all 0.3s ease; margin-right: 1.2rem; flex-shrink: 0;
+    background: var(--graphite);
+  }
+  .theme-toggle::after {
+    content: ''; position: absolute; top: 3px; left: 3px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--gold); transition: transform 0.3s ease, background 0.3s ease;
+  }
+  body.light .theme-toggle { background: #ccc9c0; border-color: #aaa; }
+  body.light .theme-toggle::after { transform: translateX(20px); background: #1a1a1a; }
+  .toggle-wrap { display: flex; align-items: center; gap: 0.5rem; }
+  .toggle-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); transition: color 0.3s; }
   .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.12em; color: var(--gold); text-decoration: none; }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a { color: var(--text-soft); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; transition: color 0.2s; }
@@ -87,6 +142,7 @@
   .section-label { font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
   .section-label::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
   .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.8rem, 5vw, 4.5rem); line-height: 0.95; letter-spacing: 0.04em; color: var(--white); margin-bottom: 1.5rem; }
+  .section-title::after { content: ''; display: block; width: 40px; height: 2px; background: var(--white); margin-top: 1rem; opacity: 0.25; }
 
   /* MARQUEE */
   .marquee-strip { overflow: hidden; background: var(--gold); padding: 0.9rem 0; white-space: nowrap; }
@@ -103,8 +159,8 @@
   .service-card::before { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
   .service-card:hover { background: var(--smoke); }
   .service-card:hover::before { transform: scaleX(1); }
-  .service-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: rgba(168,168,179,0.12); position: absolute; top: 1.5rem; right: 1.8rem; line-height: 1; }
-  .service-icon { width: 40px; height: 40px; margin-bottom: 1.5rem; color: var(--gold); }
+  .service-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: rgba(255,255,255,0.08); position: absolute; top: 1.5rem; right: 1.8rem; line-height: 1; }
+  .service-icon { width: 40px; height: 40px; margin-bottom: 1.5rem; color: var(--white); }
   .service-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.06em; color: var(--white); margin-bottom: 0.6rem; }
   .service-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; }
   .service-price { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--gold); }
@@ -128,7 +184,7 @@
   .about-image { position: relative; overflow: hidden; background: url('images/kleankut_00.png') center top/cover no-repeat; min-height: 600px; }
   .about-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(17,17,17,0) 60%, var(--charcoal) 100%); }
   .about-content { padding: 6rem 5rem 6rem 4rem; display: flex; flex-direction: column; justify-content: center; }
-  .about-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem, 2vw, 1.8rem); font-style: italic; font-weight: 300; color: var(--cream); line-height: 1.5; margin-bottom: 2rem; border-left: 2px solid var(--gold); padding-left: 1.5rem; }
+  .about-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem, 2vw, 1.8rem); font-style: italic; font-weight: 300; color: var(--white); line-height: 1.5; margin-bottom: 2rem; border-left: 2px solid rgba(255,255,255,0.4); padding-left: 1.5rem; }
   .about-body { font-size: 0.88rem; color: var(--text-muted); line-height: 1.9; margin-bottom: 2rem; }
   .about-awards { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
   .award-badge { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(168,168,179,0.3); padding: 0.4rem 0.8rem; }
@@ -136,14 +192,14 @@
   /* STATS */
   .stats-strip { background: var(--graphite); padding: 4rem 5rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .stat-item { text-align: center; }
-  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; letter-spacing: 0.04em; color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
+  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; letter-spacing: 0.04em; color: var(--white); line-height: 1; margin-bottom: 0.4rem; }
   .stat-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
 
   /* TESTIMONIALS */
   #testimonials { background: var(--black); }
   .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3.5rem; }
-  .testimonial-card { background: var(--graphite); border: 1px solid var(--border); padding: 2.2rem; position: relative; }
-  .testimonial-card::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 5rem; color: var(--gold); opacity: 0.2; position: absolute; top: 0.5rem; left: 1.5rem; line-height: 1; }
+  .testimonial-card { background: var(--graphite); border: 1px solid rgba(255,255,255,0.1); padding: 2.2rem; position: relative; }
+  .testimonial-card::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 5rem; color: var(--white); opacity: 0.1; position: absolute; top: 0.5rem; left: 1.5rem; line-height: 1; }
   .stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 1rem; }
   .testimonial-text { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: var(--text-soft); line-height: 1.7; margin-bottom: 1.5rem; }
   .testimonial-author { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); font-weight: 500; }
@@ -259,7 +315,13 @@
       <li><a href="#faq">FAQ</a></li>
     </ul>
   </nav>
-  <a href="https://www.vagaro.com/kleankutgroominglounge" target="_blank" class="btn-book-nav">Book Now</a>
+  <div style="display:flex;align-items:center;gap:1.2rem;">
+    <div class="toggle-wrap">
+      <span class="toggle-label" id="toggle-label">Dark</span>
+      <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light mode"></button>
+    </div>
+    <a href="https://www.vagaro.com/kleankutgroominglounge" target="_blank" class="btn-book-nav">Book Now</a>
+  </div>
 </header>
 
 <!-- HERO -->
@@ -679,6 +741,18 @@
 </footer>
 
 <script>
+  function toggleTheme() {
+    const isLight = document.body.classList.toggle('light');
+    document.getElementById('toggle-label').textContent = isLight ? 'Light' : 'Dark';
+    localStorage.setItem('kleankut-theme', isLight ? 'light' : 'dark');
+  }
+
+  // Restore saved preference
+  if (localStorage.getItem('kleankut-theme') === 'light') {
+    document.body.classList.add('light');
+    document.getElementById('toggle-label').textContent = 'Light';
+  }
+
   const stickyBar = document.getElementById('sticky-bar');
   window.addEventListener('scroll', () => {
     stickyBar.classList.toggle('scrolled', window.scrollY > 50);
